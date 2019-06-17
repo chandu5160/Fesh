@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+        /* css class for the login generated errors */
+
+        .profilepress-reset-status {
+            width: 400px;
+            text-align: center;
+            background-color: red;
+            color: #ffffff;
+            border: medium none;
+            border-radius: 4px;
+            font-size: 17px;
+            font-weight: normal;
+            line-height: 1.4;
+            padding: 8px 5px;
+            margin: auto;
+        }
+
+        .memo-reset-success {
+            width: 400px;
+            text-align: center;
+            background-color: red;
+            color: #ffffff;
+            border: medium none;
+            border-radius: 4px;
+            font-size: 17px;
+            font-weight: normal;
+            line-height: 1.4;
+            padding: 8px 5px;
+            margin: auto;
+        }
+
+        #forgot-password,
+        #otp-password,
+        #create-password {
+            background: #f0f0f0;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 8px;
+            margin-bottom: 2%;
+            transition: opacity 1s;
+            -webkit-transition: opacity 1s;
+        }
+
+        #forgot-password,
+        #otp-password,
+        #create-password h1 {
+            background: black;
+            padding: 20px 0;
+            font-size: 140%;
+            font-weight: 300;
+            text-align: center;
+            color: #fff;
+        }
+
+        div#forgot-password,
+        #otp-password,
+        #create-password .sc-container {
+            background: #f0f0f0;
+            padding: 6% 4%;
+        }
+    </style> -->
+
+</head>
+
+<body>
+<hr>
+    <div class="container" id="1" style="display: block">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <h3><i class="fa fa-lock fa-4x"></i></h3>
+                                <h2 class="text-center">Forgot Password?</h2>
+                                <p>You can reset your password here.</p>
+                                <div class="panel-body">
+
+                                    <form class="form">
+                                        <fieldset>
+                                            <span id="spnForgetEmail"></span>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i
+                                                            class="glyphicon glyphicon-envelope color-blue"></i></span>
+
+                                                    <input id="emailInputForget" placeholder="email address"
+                                                        class="form-control" type="email"
+                                                        oninvalid="setCustomValidity('Please enter a valid email address!')"
+                                                        onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="btn btn-lg btn-primary btn-block" value="Send My Password"
+                                                    type="button" onclick="forgetPass('email')">
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="2" style="display:none">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <h3><i class="fa fa-lock fa-4x"></i></h3>
+                                <h2 class="text-center">OTP</h2>
+                                <p>Enter your OTP here.</p>
+                                <div class="panel-body">
+
+                                    <form class="form">
+                                        <fieldset>
+                                            <span id="spnForgetOtp" style="color:red"></span>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    
+                                                    <input type="hidden" id="emailForOtp">
+                                                    <input id="emailOtpText" placeholder="6-Digits"
+                                                        class="form-control" type="text"
+                                                        oninvalid="setCustomValidity('Please enter a valid email address!')"
+                                                        onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="btn btn-lg btn-primary btn-block" value="Verify OTP"
+                                                    type="button"
+                                                    onclick="forgetPass('otp')">
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="3" style="display:none">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <h3><i class="fa fa-lock fa-4x"></i></h3>
+                                <h2 class="text-center">OTP</h2>
+                                <p>Generate Password.</p>
+                                <div class="panel-body">
+
+                                    <form class="form">
+                                        <fieldset>
+                                                <span id="spngeneratePass" style="color: red"></span>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                   
+                                                 
+                                                    <input type="hidden" id="emailForGen">
+                                                    <input id="newPassForget" placeholder="New Password"
+                                                        class="form-control" type="password"
+                                                        oninvalid="setCustomValidity('Please enter a valid email address!')"
+                                                        onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                                        <input id="cnewPassForget" placeholder="Confirm Password"
+                                                        class="form-control" type="password"
+                                                        oninvalid="setCustomValidity('Please enter a valid email address!')"
+                                                        onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="btn btn-lg btn-primary btn-block" value="Create Password"
+                                                    type="button" onclick="forgetPass('NewPass')">
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/ajaxcalls.js"></script>
+	<script type="text/javascript" src="js/usermodule.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+</html>

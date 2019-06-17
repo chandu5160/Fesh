@@ -1,0 +1,50 @@
+<form class="leave-comment">
+	<h4 class="m-text26 p-b-36 p-t-15">
+		Add Brand
+	</h4>
+	
+	<span id="spanForBrand" style="color:red"></span>
+	<input class="sizefull s-text7 p-l-22 p-r-22" type="hidden" id="bid" name="bid">
+	<div class="bo4 of-hidden size15 m-b-20">
+		<input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="bname" name="bname" 
+			placeholder="Brand Name" onfocus="generateID('BND','bid','brand')">
+	</div>
+	<div class="flex-m flex-w p-b-10">
+		<div class="s-text15 w-size15 t-center">
+			Categoreis
+		</div>
+
+		<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+			<select class="selection-2" name="size" id="pcategory" name="pcategory">
+				<!-- <option>Choose an option</option>
+				<option>Size S</option>
+				<option>Size M</option>
+				<option>Size L</option>
+				<option>Size XL</option> -->
+			</select>
+		</div>
+	</div>
+	<!-- <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
+		<select class="selection-2" id="pcategory" name="pcategory">
+			
+		</select>
+	</div> -->
+	<!-- /Image Views -->
+	<div class="w-size25">
+		<!-- Button -->
+		<button onclick="addbrand()" type="button" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">
+			Add Brand
+		</button>
+	</div>
+</form>
+<script type="text/javascript">
+	$(".selection-1").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect1')
+	});
+
+	$(".selection-2").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect2')
+	});
+</script>

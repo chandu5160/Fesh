@@ -1,0 +1,81 @@
+<form class="leave-comment">
+    <h4 class="m-text26 p-b-36 p-t-15">
+        Edit Product
+    </h4>
+
+    <div class="bo4 of-hidden  size15 m-b-20">
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pid" name="pid" disabled placeholder="Product ID">
+    </div>
+
+    <div class="bo4 of-hidden size15 m-b-20">
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pname" name="pname" placeholder="Product Name">
+    </div>
+    <div class="bo4 of-hidden size15 m-b-20">
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pcost" name="pcost" placeholder="Product Cost">
+    </div>
+    <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
+        <select class="selection-2" id="pcategory" name="pcategory" onchange="getCatBrand('brand','brand');">
+
+        </select>
+    </div>
+    <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21  m-b-12">
+        <select class="selection-2" id="pbrand" name="pbrand">
+
+        </select>
+    </div>
+    <div class="bo4 of-hidden size15 m-b-20">
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pquantity" name="pquantity"
+            placeholder="Product quantity">
+    </div>
+
+
+
+    <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="pdescription"
+        placeholder="Description" id="pdescription"></textarea>
+    <!-- Image Views -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="   m-l-30 m-b-30 " style="height:100 ;width:100">
+                <img src="" alt="IMG-BENNER" id="pimg" border=3 height=200 width=200>
+
+
+            </div>
+            <div class="   m-l-30 m-b-30 ">
+                <img src="" alt="IMG-BENNER" id="pimg1" border=3 height=200 width=200>
+
+
+            </div>
+        </div>
+        <div class="row">
+                <div class=" m-l-30 m-b-30  ">
+                        <img src="" alt="IMG-BENNER" id="pimg2" border=3 height=200 width=200>
+        
+        
+                    </div>
+                    <div class=" m-l-30 m-b-30 ">
+                        <img src="" alt="IMG-BENNER" id="pimg3" border=3 height=200 width=200>
+        
+        
+                    </div>
+        </div>
+    </div>
+    <!-- /Image Views -->
+    <div class="w-size25">
+        <!-- Button -->
+        <button type="button" onclick="update('products')" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">
+            Update Product
+        </button>
+    </div>
+</form>
+<script type="text/javascript">
+	$(".selection-1").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect1')
+	});
+
+	$(".selection-2").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect2')
+	});
+</script>

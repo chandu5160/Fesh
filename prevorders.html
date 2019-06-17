@@ -1,0 +1,54 @@
+<!-- Cart -->
+<section class="cart bgwhite  p-b-100">
+	<div class="container">
+		<!-- Cart item -->
+		<div class="container-table-cart pos-relative">
+			<div class="wrap-table-shopping-cart bgwhite">
+				<table class="table-shopping-cart" >
+					<thead class="table-head">
+						<th class="column-1"></th>
+						<th class="column-2">Product</th>
+						<th class="column-3">Price</th>
+						<th class="column-4 p-l-70">Quantity</th>
+						<th class="column-5">Date</th>
+					</thead>
+					<tbody id="previousorderDetails" align="center">
+					
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
+			<div class="flex-w flex-m w-full-sm">
+				
+			</div>
+
+		</div>
+
+		<!-- Total -->
+		<div onclick="$('#s1').load('/home');loadFromDB('categoryUser','getCategory');loadFromDB('productsUser','getProducts');" class="p-t-65"> <i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i> </div>
+	</div>
+
+	
+</section>
+<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+<script type="text/javascript">
+	cartTableData();
+	$(".selection-1").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect1')
+	});
+
+	$(".selection-2").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect2')
+	});
+</script>
+<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="js/main1.js"></script>
+
+<!-- Footer -->

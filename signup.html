@@ -1,0 +1,93 @@
+	<section class="bgwhite  p-b-60">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 p-b-30"></div>
+
+				<div class="col-md-6 p-b-30">
+					<form class="leave-comment" id="regForm"   >
+						<h4 class="m-text26 p-b-30 p-t-15">
+							Signup Form
+						</h4>
+						<p class=" text-center" style="color:red" id="errdetails"></p>
+                        
+						<input class="sizefull s-text7 p-l-22 p-r-22" type="text"  name="uid"  id="uid">
+						
+						<p class=" text-center" style="color:red" id="errname"></p>  
+						<div class="flex-m flex-w m-b-20 ">
+								<div class="s-text15 w-size15 t-center">
+										Name:
+								</div>
+								<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+										<div class="bo4 of-hidden size15 ">	
+											<input class="sizefull s-text7 p-l-22 p-r-22" type="text"  name="fname" onchange="generateID('USER','uid','users')" id="fname"  placeholder="Full Namee" onkeypress="return (event.charCode==32)||(event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required onblur="fnameval()">
+										</div>		
+								</div>
+						</div>
+						<p class=" text-center" style="color:red" id="erremail"></p>
+						<div class="flex-m flex-w p-b-20">
+								<div class="s-text15 w-size15 t-center">
+										Enter Email:
+								</div>
+								<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+										<div class="bo4 of-hidden size15 ">	
+												<input class="sizefull s-text7 p-l-22 p-r-22" type="email" name="email" id="email" placeholder="Email Address" onkeyup="emailval();" onblur="isData('email');"   required>
+										</div>		
+								</div>
+						</div>
+                        
+						<p class=" text-center" style="color:red" id="errpass"></p>
+						<div class="flex-m flex-w p-b-20">
+								<div class="s-text15 w-size15 t-center">
+										Password:
+								</div>
+								<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+										<div class="bo4 of-hidden size15 ">	
+												<input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" id="password" placeholder="Enter Password" onkeyup="pswval()" required>
+										</div>		
+								</div>
+						</div>
+						<p class=" text-center" style="color:red" id="errcpass"></p>
+						<div class="flex-m flex-w p-b-20">
+								<div class="s-text15 w-size15 t-center">
+										Confirm Password:
+								</div>
+								<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+										<div class="bo4 of-hidden size15 ">	
+												<input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required  onkeyup="cpswval()">
+										</div>		
+								</div>
+						</div>
+						<p class=" text-center" style="color:red" id="errphone"></p>
+						<div class="flex-m flex-w p-b-20">
+								<div class="s-text15 w-size15 t-center">
+										Phone :
+								</div>
+								<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+										<div class="bo4 of-hidden size15 ">	
+											<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone" id="phone" placeholder="Phone Number" maxlength="12" required onkeyup="phnval();" onblur="isData('phone')">
+										</div>		
+								</div>
+						</div>
+                        
+						<div class="w-size2">
+							<!-- Button -->
+							<button type="button" onclick="signupsajax()" id="regFormbtn" class="flex-r-s size10 bg1 bo-rad-23 hov1 m-text1">
+								Signup
+							</button>
+							<a class=" p-r-10 flex-c-m size1 " href="#" onclick="loginPageForUser('login')">
+								Login
+							</a>
+							
+						</div>
+						
+					</form>
+                </div>
+                <div class="col-md-3 p-b-30"></div>
+				<div class="col-md-6 p-b-30">
+					<div class="p-r-20 p-r-0-lg">
+						<!-- <div class="contact-map size21" id="google_map" data-map-x="40.614439" data-map-y="-73.926781" data-pin="images/icons/icon-position-map.png" data-scrollwhell="0" data-draggable="1"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

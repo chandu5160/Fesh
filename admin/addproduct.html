@@ -1,0 +1,158 @@
+<form action='/addpdtoo' method='POST' enctype="multipart/form-data" class="leave-comment">
+    <h4 class="m-text26 p-b-36 p-t-15">
+        Add Product
+    </h4>
+
+   
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="hidden"  id="pid" name="pid"
+            placeholder="Product ID">
+    
+
+    <div class="bo4 of-hidden size15 m-b-20">
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pname" name="pname" onfocus="generateID('PROD','pid','products')"
+            placeholder="Product Name">
+    </div>
+    <div class="bo4 of-hidden size15 m-b-20">
+        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pcost" name="pcost"
+            placeholder="Product Cost">
+    </div>
+    <div class="flex-m flex-w p-b-10">
+		<div class="s-text15 w-size15 t-center">
+			Categoreis
+		</div>
+
+		<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+			<select class="selection-2"  id="pcategory" name="pcategory" onchange="getCatBrand('brand','brand')">
+				<!-- <option>Choose an option</option>
+				<option>Size S</option>
+				<option>Size M</option>
+				<option>Size L</option>
+				<option>Size XL</option> -->
+			</select>
+		</div>
+	</div>
+    <div class="flex-m flex-w p-b-10">
+		<div class="s-text15 w-size15 t-center">
+			Brands
+		</div>
+
+		<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+			<select class="selection-2"  id="pbrand" name="pbrand" >
+				<!-- <option>Choose an option</option>
+				<option>Size S</option>
+				<option>Size M</option>
+				<option>Size L</option>
+				<option>Size XL</option> -->
+			</select>
+		</div>
+	</div>
+   
+    <div class="bo4 of-hidden size15 m-b-20">
+            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" id="pquantity" name="pquantity"
+            placeholder="Product quantity">
+        </div>
+
+
+
+    <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="pdescription"
+        placeholder="Description" id="pdescription"></textarea>
+    <!-- Image Views -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-6 size20" style="height:200px">
+                <div id="image-preview6"  >
+                    <label for="image-upload6" id="image-label6">Front View</label>
+                    <input type="file" name="front" id="image-upload6" style="height:200px" />
+                </div>
+            </div>
+            <div class="col-6 size20" style="height:200px">
+                <div id="image-preview7" >
+                    <label for="image-upload7" id="image-label7"> left Side View</label>
+                    <input type="file" name="lside" id="image-upload7"  style="height:200px"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 size20 " style="height:200px">
+                <div id="image-preview8" >
+                    <label for="image-upload8" id="image-label8">right Side View</label>
+                    <input type="file" name="rside" id="image-upload8" style="height:200px" />
+                </div>
+            </div>
+            <div class="col-6 size20" style="height:200px">
+                <div id="image-preview9">
+                    <label for="image-upload9" id="image-label9">back View</label>
+                    <input type="file" name="back" id="image-upload9" style="height:200px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Image Views -->
+    <div class="w-size25">
+        <!-- Button -->
+       <button type="submit" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" >submit</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.uploadPreview({
+            input_field: "#image-upload6",   // Default: .image-upload
+            preview_box: "#image-preview6",  // Default: .image-preview
+            label_field: "#image-label6",    // Default: .image-label
+            label_default: "Choose File",   // Default: Choose File
+            label_selected: "Change File",  // Default: Change File
+            no_label: true                 // Default: false
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.uploadPreview({
+            input_field: "#image-upload7",   // Default: .image-upload
+            preview_box: "#image-preview7",  // Default: .image-preview
+            label_field: "#image-label7",    // Default: .image-label
+            label_default: "Choose File",   // Default: Choose File
+            label_selected: "Change File",  // Default: Change File
+            no_label: true                 // Default: false
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.uploadPreview({
+            input_field: "#image-upload8",   // Default: .image-upload
+            preview_box: "#image-preview8",  // Default: .image-preview
+            label_field: "#image-label8",    // Default: .image-label
+            label_default: "Choose File",   // Default: Choose File
+            label_selected: "Change File",  // Default: Change File
+            no_label: true                 // Default: false
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.uploadPreview({
+            input_field: "#image-upload9",   // Default: .image-upload
+            preview_box: "#image-preview9",  // Default: .image-preview
+            label_field: "#image-label9",    // Default: .image-label
+            label_default: "Choose File",   // Default: Choose File
+            label_selected: "Change File",  // Default: Change File
+            no_label: true                 // Default: false
+        });
+    });
+</script>
+<script type="text/javascript">
+	$(".selection-1").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect1')
+	});
+
+	$(".selection-2").select2({
+		minimumResultsForSearch: 20,
+		dropdownParent: $('#dropDownSelect2')
+	});
+</script>
+
+
